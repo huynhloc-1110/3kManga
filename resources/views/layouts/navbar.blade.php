@@ -6,10 +6,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Log in</a>
+        <a href="" class="nav-link">Sign Up</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Sign in</a>
+        <a href="" class="nav-link">Log In</a>
       </li>
     </ul>
 

@@ -23,3 +23,6 @@ Route::get('/home', function () {
 Route::get('/login', function () {
     return view('accounts.login');
 });
+Route::get('/signup', function () {
+    return view('accounts.signup');
+});
