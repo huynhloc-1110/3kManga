@@ -26,7 +26,7 @@
           <!-- Home Menu Item -->
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="fa-solid fa-house-user"></i>
               <p>
                 Home
               </p>
@@ -35,7 +35,7 @@
           <!-- Library Menu Item -->
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class="fa-solid fa-books"></i>
               <p>
                 Library
               </p>
@@ -44,7 +44,7 @@
           <!-- Update Menu Item -->
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class="fa-solid fa-up-from-line"></i>
               <p>
                 Update
                 <span class="right badge badge-danger">10</span>
@@ -54,7 +54,7 @@
           <!-- Admin Menu Item -->
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class="fa-solid fa-user"></i>
               <p>
                 Admin
               </p>
