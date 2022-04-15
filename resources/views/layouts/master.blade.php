@@ -17,7 +17,7 @@
   @show
   
 </head>
-<body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
   @include('layouts.navbar')
   @include('layouts.sidebar')

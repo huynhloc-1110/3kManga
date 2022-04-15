@@ -12,7 +12,7 @@
 @section('title', 'Log in')
 
 @section('content')
-<div class ="mainlogin">
+<div class ="main">
     <div class="container">
         <div class="signin-content">
             <div class="signin-image">
