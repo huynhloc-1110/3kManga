@@ -6,10 +6,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Sign Up</a>
+        <a href="{{ url('signup') }}" class="nav-link">Sign Up</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Log In</a>
+        <a href="{{ url('login') }}"  >Log In</a> <!-- WITHOUT NAV-LINK -->
       </li>
     </ul>
 
