@@ -9,7 +9,7 @@
         <a href="{{ url('signup') }}" class="nav-link">Sign Up</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ url('login') }}"  >Log In</a> <!-- WITHOUT NAV-LINK -->
+        <a href="{{ url('login') }}" class="nav-link">Log In</a>
       </li>
     </ul>
 

@@ -25,7 +25,7 @@
                with font-awesome or any other icon font library -->
           <!-- Home Menu Item -->
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ url('home') }}" class="nav-link">
               <i class="nav-icon fas fa-house-user"></i>
               <p>
                 Home
