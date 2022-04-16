@@ -106,9 +106,11 @@
   /* IE9 Compat Modes */
   src: local("Poppins Black"), local("Poppins-Black"), url("../fonts/poppins/poppins-v5-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-900.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-900.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-900.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-900.svg#Poppins") format("svg");
   /* Legacy iOS */ }
-/* @extend display-flex;
- */
 
+ .content-wrapper {
+   font-family: 'Poppins';
+}
+  
  .content-wrapper display-flex, .content-wrapper .display-flex, .content-wrapper .display-flex-center, .content-wrapper .signup-content, .content-wrapper .signin-content, .content-wrapper .social-login, .content-wrapper .socials {
 	 display: flex;
 	 display: -webkit-flex;
@@ -292,14 +294,12 @@
 	 margin-top: 16px;
 }
  .content-wrapper .signup-image-link {
-	 font-size: 14px;
-	 color: #222;
+	 font-size: 16px;
 	 display: block;
 	 text-align: center;
 }
  .content-wrapper .term-service {
-	 font-size: 13px;
-	 color: #222;
+	 font-size: 16px;
 }
  .content-wrapper .signup-form {
 	 margin-left: 75px;
