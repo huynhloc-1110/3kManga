@@ -48,6 +48,7 @@
             </div>
             <div class="signup-image">
                 <figure><img src="dist/img/signup.jpg" alt="sign up image"></figure>
+                <a href="{{ url('login') }}" class="signup-image-link">I am already member</a>
             </div>
         </div>
     </div>
