@@ -32,3 +32,6 @@ Route::get('/admin', function () {
 Route::get('/admin-account', function () {
     return view('admins.account-manage');
 });
+Route::get('/chapter', function () {
+    return view('admins.chapter-manage');
+});
