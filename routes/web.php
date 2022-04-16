@@ -26,3 +26,6 @@ Route::get('/login', function () {
 Route::get('/signup', function () {
     return view('accounts.signup');
 });
+Route::get('/admin', function () {
+    return view('admins.login');
+});
