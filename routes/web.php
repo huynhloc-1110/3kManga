@@ -32,3 +32,6 @@ Route::get('/admin', function () {
 Route::get('/admin-account', function () {
     return view('admins.account-manage');
 });
+Route::get('/admin-manga', function () {
+    return view('admins.manga-manage');
+});
