@@ -22,7 +22,7 @@
             <div class="signin-form">
                 <h2 class="form-title">Admin</h2>
                 <p></p>
-                <form method="POST" class="register-form" id="login-form">
+                <form action="" method="POST" class="register-form" id="login-form">
                     <div class="form-group">
                         <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>

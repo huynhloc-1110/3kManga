@@ -27,9 +27,8 @@ Route::get('/signup', function () {
     return view('accounts.signup');
 });
 Route::get('/admin', function () {
-<<<<<<< HEAD
-    return view('admin.account-manage');
-=======
     return view('admins.login');
->>>>>>> 2890c94c7a900a2aa558f92a63901cd43b472cf8
+});
+Route::get('/admin-account', function () {
+    return view('admins.account-manage');
 });
