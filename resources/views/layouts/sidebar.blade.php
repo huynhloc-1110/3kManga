@@ -47,7 +47,6 @@
             <i class="nav-icon fas fa-upload"></i>
               <p>
                 Update
-                <span class="right badge badge-danger">10</span>
               </p>
             </a>
           </li>
