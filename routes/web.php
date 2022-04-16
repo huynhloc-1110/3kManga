@@ -35,3 +35,6 @@ Route::get('/admin-account', function () {
 Route::get('/admin-manga', function () {
     return view('admins.manga-manage');
 });
+Route::get('/chapter', function () {
+    return view('admins.chapter-manage');
+});
