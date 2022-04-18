@@ -4,7 +4,7 @@
     @parent
 @endsection
 
-@section('title', 'Profile')
+@section('title', 'Admin Profile')
 
 
 @section('content')

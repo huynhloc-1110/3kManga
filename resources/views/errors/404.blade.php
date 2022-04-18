@@ -35,7 +35,7 @@
     </style>
 @endsection
 
-@section('title', 'Error 404 not found')
+@section('title', '404 Not Found')
 
 @section('content')
 <div class="container">

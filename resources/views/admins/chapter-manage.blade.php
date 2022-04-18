@@ -4,7 +4,7 @@
     @parent
 @endsection
 
-@section('title', 'Account Management')
+@section('title', 'Chapter Management')
 
 
 @section('content')
