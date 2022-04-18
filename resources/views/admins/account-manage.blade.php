@@ -28,7 +28,7 @@
                 <input type="password" name="password" class="form-control" value="">
             </div>
             <input type="submit" name="savebtn" class="btn btn-primary" value="Save">
-   
+            <a href="{{ url('admin-profile') }}" class="btn btn-default">Back</a>
         </form>
     </div>
 </div>

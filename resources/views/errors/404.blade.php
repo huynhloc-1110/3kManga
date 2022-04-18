@@ -28,6 +28,10 @@
             margin: 20px;
             text-shadow: 15px 5px 2px rgb(223, 223, 223);
         }
+        .content-wrapper img {
+            border-radius: 50%;
+            width : 200px;
+        }
     </style>
 @endsection
 
@@ -35,6 +39,7 @@
 
 @section('content')
 <div class="container">
+    <img src="/dist/img/bonk.gif" alt="bonk">
     <h2>404</h2>
     <h3>Oops, nothing here...</h3>
 </div>

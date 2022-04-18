@@ -52,7 +52,7 @@
           </li>
           <!-- Admin Menu Item -->
           <li class="nav-item">
-            <a href="{{ url('admin') }}" class="nav-link">
+            <a href="{{ url('admin-profile') }}" class="nav-link">
             <i class="nav-icon fas fa-user"></i>
               <p>
                 Admin

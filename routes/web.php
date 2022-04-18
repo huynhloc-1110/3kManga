@@ -38,9 +38,12 @@ Route::get('/admin-manga', function () {
 Route::get('/admin-chapter', function () {
     return view('admins.chapter-manage');
 });
-Route::get('/error', function () {
-    return view('errors.404');
-});
 Route::get('/profile', function () {
     return view('accounts.profile');
+});
+Route::get('/admin-profile', function () {
+    return view('admins.profile');
+});
+Route::get('/unauthorize', function () {
+    return view('errors.unauthorize');
 });
