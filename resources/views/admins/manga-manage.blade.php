@@ -57,7 +57,7 @@
             </div>
 
             <input type="submit" name="savebtn" class="btn btn-primary" value="Save">
-            <a href="" class="btn btn-default">Cancel</a>
+            
         </form>
     </div>
 </div>

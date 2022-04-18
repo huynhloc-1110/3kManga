@@ -28,7 +28,7 @@
                 <input type="password" name="password" class="form-control" value="">
             </div>
             <input type="submit" name="savebtn" class="btn btn-primary" value="Save">
-            <a href="" class="btn btn-default">Cancel</a>
+   
         </form>
     </div>
 </div>

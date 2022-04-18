@@ -23,6 +23,7 @@
             <div class="signin-form">
                 <h2 class="form-title">Log in</h2>
                 <p>Dive in to the world of manga series!</p>
+                <br>
                 <p></p>
                 <form method="POST" class="register-form" id="login-form">
                     <div class="form-group">
