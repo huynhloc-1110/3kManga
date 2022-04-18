@@ -48,6 +48,12 @@
                 </form>
             </div>
         </div>
+        <div class="card mb-4">
+            <div class="card-header">User Features</div>
+            <div class="card-body">
+                <button class="btn btn-danger" type="button">Log out</a>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

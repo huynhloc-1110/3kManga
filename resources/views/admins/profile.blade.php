@@ -54,6 +54,7 @@
                 <a class="btn btn-primary" href="{{ url('admin-account') }}">Account Manage</a>
                 <a class="btn btn-primary" href="{{ url('admin-manga') }}">Manga Manage</a>
                 <a class="btn btn-primary" href="{{ url('admin-chapter') }}">Chapter Manage</a>
+                <button class="btn btn-danger" type="button">Log out</a>
             </div>
         </div>
     </div>
