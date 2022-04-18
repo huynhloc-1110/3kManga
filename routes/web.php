@@ -17,18 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//both role
 Route::get('/home', function () {
     return view('home');
 });
 Route::get('/login', function () {
-    return view('accounts.login');
+    return view('login');
 });
+
+//user
 Route::get('/signup', function () {
     return view('accounts.signup');
 });
-Route::get('/admin', function () {
-    return view('admins.login');
+Route::get('/profile', function () {
+    return view('accounts.profile');
 });
+
+//admin
 Route::get('/admin-account', function () {
     return view('admins.account-manage');
 });
@@ -38,12 +43,11 @@ Route::get('/admin-manga', function () {
 Route::get('/admin-chapter', function () {
     return view('admins.chapter-manage');
 });
-Route::get('/profile', function () {
-    return view('accounts.profile');
-});
 Route::get('/admin-profile', function () {
     return view('admins.profile');
 });
+
+//other
 Route::get('/unauthorize', function () {
     return view('errors.unauthorize');
 });

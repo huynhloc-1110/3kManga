@@ -40,6 +40,7 @@
                     </div>
                     <div class="form-group form-button">
                         <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                        <input type="submit" name="signin" id="signin" class="form-submit2" value="Log in as admin"/>
                     </div>
                 </form>
             </div>
