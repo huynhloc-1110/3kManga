@@ -38,3 +38,6 @@ Route::get('/admin-manga', function () {
 Route::get('/admin-chapter', function () {
     return view('admins.chapter-manage');
 });
+Route::get('/error', function () {
+    return view('errors.404');
+});
