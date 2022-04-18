@@ -19,6 +19,7 @@
             <div class="signup-form">
                 <h2 class="form-title">Sign up</h2>
                 <p>Konichiwa!! welcome to 3KMANGA</p>
+                <br>
                 <p></p>
                 <form method="POST" class="register-form" id="register-form">
                     <div class="form-group">
