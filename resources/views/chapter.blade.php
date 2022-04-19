@@ -21,7 +21,7 @@
     </div>
     <div class="col-lg-6 m-auto text-center">
         <br>
-        <button type="button" class="btn btn-primary">Return to Manga Page</button>
+        <a href="{{ url('manga') }}" class="btn btn-primary">Return to Manga Page</a>
     </div>
 </div>
 @endsection
