@@ -27,10 +27,16 @@ Route::get('/login', function () {
 
 //user
 Route::get('/signup', function () {
-    return view('accounts.signup');
+    return view('users.signup');
 });
 Route::get('/profile', function () {
-    return view('accounts.profile');
+    return view('users.profile');
+});
+Route::get('/update', function () {
+    return view('users.update');
+});
+Route::get('/library', function () {
+    return view('users.library');
 });
 
 //admin
