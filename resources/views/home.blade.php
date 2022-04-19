@@ -9,9 +9,8 @@
 @section('title', 'Home')
     
 @section('content')
-@for ($i = 0; $i < 2; $i++)
 <div class="row">
-    @for ($j = 0; $j < 4; $j++)
+    @for ($j = 0; $j < 8; $j++)
     <div class="col-lg-3 col-6">
       <!-- small box -->
       <div class="small-box bg-info">
@@ -23,5 +22,4 @@
     </div>
     @endfor
 </div>
-@endfor
 @endsection
