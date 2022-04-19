@@ -10,17 +10,19 @@
     
 @section('content')
 <div class="row">
-    @for ($j = 0; $j < 8; $j++)
-    <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <br>
-      <div class="small-box bg-info">
-        <div class="card border-0 bg-light mb-2">
-            <img src="dist/img/one_piece.jpg" alt="one_piece_cover">
+  @if (isset($mangas))
+      @foreach ($mangas as $manga)
+      <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <br>
+        <div class="small-box bg-info">
+          <div class="card border-0 bg-light mb-2">
+              <img src="{{ $manga->cover_url }}" alt="{{ $manga->name }}'s cover">
+          </div>
+          <a href="{{ url("manga/$manga->id") }}" class="small-box-footer">{{ $manga->name }} <i class="fas fa-arrow-circle-right"></i></a>
         </div>
-        <a href="{{ url('manga') }}" class="small-box-footer">One Piece <i class="fas fa-arrow-circle-right"></i></a>
       </div>
-    </div>
-    @endfor
+      @endforeach
+  @endif
 </div>
 @endsection
