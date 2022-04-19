@@ -57,7 +57,7 @@
             <div class="card-body">
                 @php
                 $row = [
-                    'name' => 'chapter 1- abc',
+                    'name' => 'chapter 1 - abc',
                     'update-date' => '19/04/2022',
                 ];
                 @endphp
@@ -67,7 +67,7 @@
                     <tbody>
                     @for ($i = 0; $i < 3; $i++) 
                         <tr>
-                        <td>{{ $row['name'] }}</td>                                        
+                        <td><a href="{{ url('chapter') }}">{{ $row['name'] }}</a></td>                                        
                         <td>{{ $row['update-date'] }}</td>
                         </tr>
                     @endfor
