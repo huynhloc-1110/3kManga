@@ -51,3 +51,6 @@ Route::get('/admin-profile', function () {
 Route::get('/unauthorize', function () {
     return view('errors.unauthorize');
 });
+Route::get('/manga', function () {
+    return view('manga');
+});
