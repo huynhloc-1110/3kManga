@@ -24,6 +24,12 @@ Route::get('/home', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/manga', function () {
+    return view('manga');
+});
+Route::get('/chapter', function () {
+    return view('chapter');
+});
 
 //user
 Route::get('/signup', function () {
@@ -56,7 +62,4 @@ Route::get('/admin-profile', function () {
 //other
 Route::get('/unauthorize', function () {
     return view('errors.unauthorize');
-});
-Route::get('/manga', function () {
-    return view('manga');
 });
