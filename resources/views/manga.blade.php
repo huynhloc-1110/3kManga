@@ -32,6 +32,10 @@
                         <label class="small mb-1" for="inputmanganame">Manga Name</label>
                         <input class="form-control" id="inputmanganame" type="text" placeholder="Enter manga name" value="One Piece" readonly style="background-color: white">
                     </div>
+                    <div class="mb-3">
+                        <label class="small mb-1" for="inputmanganame">Author</label>
+                        <input class="form-control" id="inputmanganame" type="text" placeholder="Enter manga name" value="One Piece" readonly style="background-color: white">
+                    </div>
                     <div class="form-group">
                         <label >Description</label>
                         <textarea class="form-control" readonly rows="6" style="background-color: white"></textarea>
