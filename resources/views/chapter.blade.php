@@ -19,5 +19,9 @@
     <div class="col-lg-12 m-auto text-center">
         <img src="dist/img/chap-1.1.jpg" alt="chap-1.1" style="max-width: 100%">
     </div>
+    <div class="col-lg-6 m-auto text-center">
+        <br>
+        <button type="button" class="btn btn-primary">Return to Manga Page</button>
+    </div>
 </div>
 @endsection

@@ -51,7 +51,7 @@
 <div class="container">
     <img src="/dist/img/duck-dance.gif" alt="duck dance">
     <h3>Unauthorized Access</h3>
-    <p>You have <a href="{{ url('/login') }}">log in</a> an account <br> to use this feature</p>
+    <p>You have to <a href="{{ url('/login') }}">log in</a> an account <br> to use this feature</p>
     <p> or <a href="{{ url('signup') }}">sign up</a> a new account.</p>
 </div>
 @endsection
