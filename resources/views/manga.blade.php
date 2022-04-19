@@ -18,7 +18,7 @@
                 <img src="dist/img/one_piece.jpg" alt="one_piece_cover">
                 <br>
                 <br>
-                <button class="btn btn-warning" type="button"><i class="fas fa-star"></i> Following</button>
+                <button class="btn btn-outline-warning" type="button"><i class="fas fa-star"></i> Following</button>
             </div>
         </div>
     </div>
@@ -43,9 +43,9 @@
                     <div class="mb-3">
                         <label class="small mb-1" for="inputEmailAddress">Manga Genres</label>
                         <br>
-                        <input class="btn btn-light"  type="button" value="a">
-                        <input class="btn btn-light"  type="button" value="b">
-                        <input class="btn btn-light"  type="button" value="c">
+                        <a href="#" class="btn btn-secondary btn-md disabled" role="button" aria-disabled="true">a</a>
+                        <a href="#" class="btn btn-secondary btn-md disabled" role="button" aria-disabled="true">b</a>
+                        <a href="#" class="btn btn-secondary btn-md disabled" role="button" aria-disabled="true">c</a>
                     </div>
                     <!-- Form Group (hidden upload)-->
                     <input type="file" id="file_input" hidden>
