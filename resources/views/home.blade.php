@@ -9,6 +9,16 @@
 @section('title', 'Home')
     
 @section('content')
+<div class="col-md-4 offset-md-4 pt-3">
+  <form method="get">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" name="search" placeholder="Search ......" aria-label="Recipient's username">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
 <div class="row">
   @if (isset($mangas))
       @foreach ($mangas as $manga)
