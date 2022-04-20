@@ -22,17 +22,21 @@
                 <br>
                 <p></p>
                 <form method="POST" class="register-form" id="register-form">
+                    @csrf
                     <div class="form-group">
                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input type="text" name="name" id="name" placeholder="User Name"/>
+        
                     </div>
                     <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-email"></i></label>
                         <input type="email" name="email" id="email" placeholder="Your Email"/>
+                       
                     </div>
                     <div class="form-group">
                         <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                        <input type="password" name="pass" id="pass" placeholder="Password"/>
+                        <input type="password" name="password" id="pass" placeholder="Password"/>
+                     
                     </div>
 
                     <div class="form-group form-button">

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\MangaController;
+use \App\Http\Controllers\SignupController;
 
 //both role
 Route::get('/', [HomeController::class, 'showMangas']);
@@ -30,9 +31,9 @@ Route::get('/chapter', function () {
 });
 
 //user
-Route::get('/signup', function () {
-    return view('users.signup');
-});
+Route::get('/signup',[SignupController::class, 'signup']);
+
+
 Route::get('/profile', function () {
     return view('users.profile');
 });
