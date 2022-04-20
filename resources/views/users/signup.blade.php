@@ -26,25 +26,29 @@
                     <div class="form-group">
                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input type="text" name="name" id="name" placeholder="User Name"/>
-                        <span  style="color:red;" class="text-danger" >@error('name'){{$message}}@enderror</span>
-        
+                        <span  style="color:red;" >@error('name'){{$message}}@enderror</span>       
                     </div>
                     <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-email"></i></label>
                         <input type="email" name="email" id="email" placeholder="Your Email"/>
-                        <span  style="color:red;" class="text-danger" >@error('email'){{$message}}@enderror</span>
-                       
+                        <span  style="color:red;" >@error('email'){{$message}}@enderror</span>                       
                     </div>
                     <div class="form-group">
                         <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                         <input type="password" name="password" id="pass" placeholder="Password"/>
-                        <span  style="color:red;" class="text-danger" >@error('password'){{$message}}@enderror</span>
-                     
+                        <span  style="color:red;" >@error('password'){{$message}}@enderror</span>                    
                     </div>
 
                     <div class="form-group form-button">
                         <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                     </div>
+                    @if (isset($success))
+                        @if ($success)
+                            <span  style="color:green;" >You have successfully sign up!</span>
+                        @else
+                            <span  style="color:red" >Something went wrong with the sign up process.</span>
+                        @endif
+                    @endif
                 </form>
             </div>
             <div class="signup-image">

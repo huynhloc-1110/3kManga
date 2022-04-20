@@ -32,7 +32,7 @@ Route::get('/login', function () {
 
 
 //user
-Route::get('/signup',[SignupController::class, 'signup']);
+Route::get('/signup',[SignupController::class, 'signupView']);
 
 Route::post('/signup-user',[SignupController::class, 'signupUser'])->name('signup-user');
 
