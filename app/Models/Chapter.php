@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Manga extends Model
+class Chapter extends Model
 {
     use HasFactory;
-    
-    public function chapters()
-    {
-        return $this->hasMany(Chapter::class);
+
+    public function manga(){
+        return $this->belongsTo(Manga::class);
     }
 }

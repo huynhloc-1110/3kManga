@@ -15,7 +15,7 @@
         <div class="card mb-4 mb-xl-0">
             <div class="card-body text-center">
                 <!-- Profile picture image-->
-                <img src="dist/img/one_piece.jpg" alt="one_piece_cover">
+                <img src="{{ $manga->cover_url }}" alt="{{ $manga->name }}'s cover">
                 <br>
                 <br>
                 <button class="btn btn-outline-warning" type="button"><i class="fas fa-star"></i> Following</button>
@@ -30,15 +30,15 @@
                 <form>
                     <div class="mb-3">
                         <label class="small mb-1" for="inputmanganame">Manga Name</label>
-                        <input class="form-control" id="inputmanganame" type="text" placeholder="Enter manga name" value="One Piece" readonly style="background-color: white">
+                        <input class="form-control" id="inputmanganame" type="text" placeholder="Enter manga name" value="{{ $manga->name }}" readonly style="background-color: white">
                     </div>
                     <div class="mb-3">
                         <label class="small mb-1" for="inputmanganame">Author</label>
-                        <input class="form-control" id="inputmanganame" type="text" placeholder="Enter manga name" value="One Piece" readonly style="background-color: white">
+                        <input class="form-control" id="inputmanganame" type="text" placeholder="Enter manga name" value="{{ $manga->author }}" readonly style="background-color: white">
                     </div>
                     <div class="form-group">
                         <label >Description</label>
-                        <textarea class="form-control" readonly rows="6" style="background-color: white"></textarea>
+                        <textarea class="form-control" readonly rows="6" style="background-color: white; resize:none">{{ $manga->description }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label class="small mb-1" for="inputEmailAddress">Manga Genres</label>
@@ -55,26 +55,20 @@
         <div class="card mb-4">
             <div class="card-header">Chapters List</div>
             <div class="card-body">
-                @php
-                $row = [
-                    'name' => 'chapter 1 - abc',
-                    'update-date' => '19/04/2022',
-                ];
-                @endphp
 
-                @if (true)
+                @if (sizeof($chapters) > 0)
                 <table class='table table-bordered table-striped'>
                     <tbody>
-                    @for ($i = 0; $i < 3; $i++) 
+                    @foreach ($chapters as $chapter)
                         <tr>
-                        <td><a href="{{ url('chapter') }}">{{ $row['name'] }}</a></td>                                        
-                        <td>{{ $row['update-date'] }}</td>
+                        <td><a href="{{ url("chapter-$chapter->id") }}">{{ $chapter->name }}</a></td>                                        
+                        <td>{{ $chapter->updated_at }}</td>
                         </tr>
-                    @endfor
+                    @endforeach
                     </tbody>                            
                 </table>
                 @else
-                    <p class='lead'><em>No records were found.</em></p>
+                    <p class='lead'><em>No chapters were found.</em></p>
                 @endif
             </div>
         </div>

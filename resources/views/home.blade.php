@@ -19,7 +19,7 @@
           <div class="card border-0 bg-light mb-2">
               <img src="{{ $manga->cover_url }}" alt="{{ $manga->name }}'s cover">
           </div>
-          <a href="{{ url("manga/$manga->id") }}" class="small-box-footer">{{ $manga->name }} <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ url("manga-$manga->id") }}" class="small-box-footer">{{ $manga->name }} <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       @endforeach

@@ -14,16 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\MangaController;
 
 //both role
 Route::get('/', [HomeController::class, 'showMangas']);
 
+Route::get('/manga-{id}', [MangaController::class, 'showChapters']);
+
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/manga', function () {
-    return view('manga');
-});
+
 Route::get('/chapter', function () {
     return view('chapter');
 });
