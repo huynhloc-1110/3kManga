@@ -14,4 +14,13 @@ class SignupController extends Controller
         return view('users.signup');
     }
 
+    public function signupUser(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:5|max:14',
+        ]);
+
+    }
+
 }

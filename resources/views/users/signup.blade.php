@@ -21,7 +21,7 @@
                 <p>Konichiwa!! Welcome to 3KMANGA</p>
                 <br>
                 <p></p>
-                <form method="POST" class="register-form" id="register-form">
+                <form method="POST" class="register-form" id="register-form" action="{{route('signup-user')}}">
                     @csrf
                     <div class="form-group">
                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>

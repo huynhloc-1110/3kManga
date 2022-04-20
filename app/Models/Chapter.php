@@ -12,4 +12,9 @@ class Chapter extends Model
     public function manga(){
         return $this->belongsTo(Manga::class);
     }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Chapter;
-use App\Models\Genre;
 use App\Models\Manga;
 
 class MangaController extends Controller

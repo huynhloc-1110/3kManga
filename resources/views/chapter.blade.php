@@ -11,17 +11,19 @@
     <div class="col-lg-6 m-auto text-center">
         <div class="card mb-4">
             <div class="card-body">
-                <h1>One Piece</h1>
-                <h3>Chap 1 - abc</h3>
+                <h1>{{ $manga->name }}</h1>
+                <h3>{{ $chapter->name }}</h3>
             </div>
         </div>
     </div>
     <div class="col-lg-12 m-auto text-center">
-        <img src="dist/img/chap-1.1.jpg" alt="chap-1.1" style="max-width: 100%">
+        @foreach ($images as $image)
+        <img src="{{ $image->url }}" alt="Image no.{{ $image->id }}" style="max-width: 100%">
+        @endforeach
     </div>
     <div class="col-lg-6 m-auto text-center">
         <br>
-        <a href="{{ url('manga') }}" class="btn btn-primary">Return to Manga Page</a>
+        <a href="{{ url("manga-$manga->id") }}" class="btn btn-primary">Return to Manga Page</a>
     </div>
 </div>
 @endsection

@@ -43,9 +43,13 @@
                     <div class="mb-3">
                         <label class="small mb-1" for="inputEmailAddress">Manga Genres</label>
                         <br>
-                        @foreach ($genres as $genre)
-                        <a href="#" class="btn btn-secondary btn-md disabled" role="button" aria-disabled="true">{{ $genre->name }}</a>
-                        @endforeach
+                        @if (sizeof($genres) > 0)
+                            @foreach ($genres as $genre)
+                            <a href="#" class="btn btn-secondary btn-md disabled" role="button" aria-disabled="true">{{ $genre->name }}</a>
+                            @endforeach
+                        @else
+                            <p class='lead'><em>No genres were found.</em></p>
+                        @endif
                     </div>
                     <!-- Form Group (hidden upload)-->
                     <input type="file" id="file_input" hidden>

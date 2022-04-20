@@ -15,24 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\MangaController;
+use \App\Http\Controllers\ChapterController;
 use \App\Http\Controllers\SignupController;
+
 
 //both role
 Route::get('/', [HomeController::class, 'showMangas']);
 
 Route::get('/manga-{id}', [MangaController::class, 'showChapters']);
 
+Route::get('/chapter-{id}', [ChapterController::class, 'showImages']);
+
 Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/chapter', function () {
-    return view('chapter');
-});
 
 //user
 Route::get('/signup',[SignupController::class, 'signup']);
 
+Route::post('/signup-user',[SignupController::class, 'signupUser'])->name('signup-user');
 
 Route::get('/profile', function () {
     return view('users.profile');

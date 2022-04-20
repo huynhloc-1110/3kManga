@@ -20,19 +20,21 @@
   </form>
 </div>
 <div class="row">
-  @if (isset($mangas))
-      @foreach ($mangas as $manga)
-      <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <br>
-        <div class="small-box bg-info">
-          <div class="card border-0 bg-light mb-2">
-              <img src="{{ $manga->cover_url }}" alt="{{ $manga->name }}'s cover">
-          </div>
-          <a href="{{ url("manga-$manga->id") }}" class="small-box-footer">{{ $manga->name }} <i class="fas fa-arrow-circle-right"></i></a>
+  @if (sizeof($mangas) > 0)
+    @foreach ($mangas as $manga)
+    <div class="col-lg-3 col-6">
+      <!-- small box -->
+      <br>
+      <div class="small-box bg-info">
+        <div class="card border-0 bg-light mb-2">
+            <img src="{{ $manga->cover_url }}" alt="{{ $manga->name }}'s cover">
         </div>
+        <a href="{{ url("manga-$manga->id") }}" class="small-box-footer">{{ $manga->name }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
-      @endforeach
+    </div>
+    @endforeach
+  @else
+    <p class='lead'><em>No mangas were found.</em></p>
   @endif
 </div>
 @endsection
