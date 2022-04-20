@@ -26,16 +26,19 @@
                     <div class="form-group">
                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input type="text" name="name" id="name" placeholder="User Name"/>
+                        <span  style="color:red;" class="text-danger" >@error('name'){{$message}}@enderror</span>
         
                     </div>
                     <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-email"></i></label>
                         <input type="email" name="email" id="email" placeholder="Your Email"/>
+                        <span  style="color:red;" class="text-danger" >@error('email'){{$message}}@enderror</span>
                        
                     </div>
                     <div class="form-group">
                         <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                         <input type="password" name="password" id="pass" placeholder="Password"/>
+                        <span  style="color:red;" class="text-danger" >@error('password'){{$message}}@enderror</span>
                      
                     </div>
 
