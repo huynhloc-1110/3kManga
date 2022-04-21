@@ -18,6 +18,7 @@ use \App\Http\Controllers\MangaController;
 use \App\Http\Controllers\ChapterController;
 use \App\Http\Controllers\SignupController;
 use \App\Http\Controllers\LoginController;
+use \App\Http\Controllers\UserController;
 
 
 //both role
@@ -35,9 +36,9 @@ Route::post('/login-submit', [LoginController::class, 'authenticate']);
 
 //user
 Route::middleware(['auth'])->group(function(){
-    Route::get('/profile', function () {
-        return view('users.profile');
-    });
+    Route::get('/profile', [UserController::class, 'showUserInfo']);
+    Route::get('/logout', [UserController::class, 'logOut']);
+
     Route::get('/update', function () {
         return view('users.update');
     });

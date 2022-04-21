@@ -16,7 +16,7 @@
             <div class="card-header">Profile Picture</div>
             <div class="card-body text-center">
                 <!-- Profile picture image-->
-                <img class="img-account-profile rounded-circle mb-2" src="dist/img/avatar.png" alt="">
+                <img class="img-account-profile rounded-circle mb-2" src="{{ $user->avatar_url }}" alt="">
                 <!-- Profile picture help block-->
                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                 <!-- Profile picture upload button-->
@@ -32,20 +32,20 @@
                 <form>
                     <!-- Form Group (username)-->
                     <div class="mb-3">
-                        <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                        <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="Alexander Pierce">
+                        <label class="small mb-1" for="inputUsername">Username</label>
+                        <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="{{ $user->name }}" readonly style="background-color: white">
                     </div>
                     <!-- Form Group (email address)-->
                     <div class="mb-3">
                         <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                        <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                        <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="{{ $user->email }}" readonly style="background-color: white">
                     </div>
                     <!-- Form Group (hidden upload)-->
                     <input type="file" id="file_input" hidden>
 
                     <!-- Save changes button-->
                     <input class="btn btn-primary" type="submit" value="Save changes">
-                    <button class="btn btn-danger" type="button">Log out</a>
+                    <a href="{{ url('logout') }}" class="btn btn-danger" type="button">Log out</a>
                 </form>
             </div>
         </div>
