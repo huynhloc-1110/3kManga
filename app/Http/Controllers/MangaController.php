@@ -19,7 +19,24 @@ class MangaController extends Controller
         $genres = Manga::find($id)->genres()->get();
         $chapters = Chapter::where('manga_id', $id)->get();
 
-        return view('manga', compact('chapters','manga','genres'));
+        $attached = null;
+        if (!is_null(session('user-info'))) {
+            $user_id = session('user-info')->id;
+            $attached = $manga->users()->exists($user_id);
+        }
+
+        return view('manga', compact('chapters','manga','genres', 'attached'));
     }
     
+    public function follow($id) {
+        $user = session('user-info');
+        $user->mangas()->attach($id);
+        return back();
+    }
+
+    public function unfollow($id) {
+        $user = session('user-info');
+        $user->mangas()->detach($id);
+        return back();
+    }
 }

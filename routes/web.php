@@ -39,6 +39,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/profile', [UserController::class, 'showUserInfo']);
     Route::get('/logout', [UserController::class, 'logOut']);
 
+    Route::get('/follow-{id}', [MangaController::class, 'follow']);
+    Route::get('/unfollow-{id}', [MangaController::class, 'unfollow']);
+
     Route::get('/update', function () {
         return view('users.update');
     });

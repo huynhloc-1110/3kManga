@@ -18,7 +18,17 @@
                 <img src="{{ $manga->cover_url }}" alt="{{ $manga->name }}'s cover">
                 <br><br>
                 <!-- Following button -->
-                <button class="btn btn-outline-warning" type="button"><i class="fas fa-star"></i> Following</button>
+                @if (isset($attached))
+                    @if ($attached == false)
+                        <a href="{{ url("follow-$manga->id") }}" class="btn btn-outline-warning"><i class="fas fa-star"></i> Following</a>
+                    @else
+                        <a href="{{ url("unfollow-$manga->id") }}" class="btn btn-warning"><i class="fas fa-star"></i> Followed</a>
+                    @endif
+                @else
+                    <button class="btn btn-outline-warning" disabled><i class="fas fa-star"></i> Following</button>
+                    <br><br>
+                    <span style="color:red;">You need to log in to use this feature.</span>
+                @endif
             </div>
         </div>
     </div>
