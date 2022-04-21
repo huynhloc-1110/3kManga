@@ -44,7 +44,6 @@
                     <!-- Submit button -->
                     <div class="form-group form-button">
                         <input type="submit" name="user" id="login" class="form-submit" value="Log in"/>
-                        <input type="submit" name="admin" id="login" class="form-submit2" value="Log in as admin"/>
                     </div>
                 </form>
             </div>
