@@ -9,6 +9,7 @@
 @section('title', 'Home')
     
 @section('content')
+<!-- Search bar -->
 <div class="col-md-4 offset-md-4 pt-3">
   <form method="get">
     <div class="input-group mb-3">
@@ -19,11 +20,12 @@
     </div>
   </form>
 </div>
+
+<!-- Manga List's Container -->
 <div class="row">
   @if (sizeof($mangas) > 0)
     @foreach ($mangas as $manga)
     <div class="col-lg-3 col-6">
-      <!-- small box -->
       <br>
       <div class="small-box bg-info">
         <div class="card border-0 bg-light mb-2">

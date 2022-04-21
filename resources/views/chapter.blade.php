@@ -8,6 +8,7 @@
 
 @section('content')
 <div class="row py-5">
+    <!-- Chapter info's container -->
     <div class="col-lg-6 m-auto text-center">
         <div class="card mb-4">
             <div class="card-body">
@@ -16,11 +17,15 @@
             </div>
         </div>
     </div>
+
+    <!-- Image list's container -->
     <div class="col-lg-12 m-auto text-center">
         @foreach ($images as $image)
         <img src="{{ $image->url }}" alt="Image no.{{ $image->id }}" style="max-width: 100%">
         @endforeach
     </div>
+
+    <!-- Navigation buttons' container -->
     <div class="col-lg-6 m-auto text-center">
         <br>
         @if (!is_null($previous))
