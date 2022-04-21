@@ -2,6 +2,17 @@
 
 @section('asset')
     @parent
+    <script>
+        function checkUploaded() {
+            var file = document.getElementById('file-input');
+            var noti = document.getElementById('noti');
+            if (file.files.length > 0) {
+                noti.innerHTML = "An image has been chosen";
+            } else {
+                noti.innerHTML = "";
+            }
+        }
+    </script>
 @endsection
 
 @section('title', 'User Profile')
@@ -20,7 +31,9 @@
                 <!-- Profile picture help block-->
                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                 <!-- Profile picture upload button-->
-                <button class="btn btn-primary" type="button" onclick="document.getElementById('file_input').click()">Upload new image</button>
+                <button class="btn btn-primary" type="button" onclick="document.getElementById('file-input').click()">Upload new image</button>
+                <br>
+                <span style="color:green;" id="noti"></span>
             </div>
         </div>
     </div>
@@ -41,7 +54,7 @@
                         <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="{{ $user->email }}" readonly style="background-color: white">
                     </div>
                     <!-- Form Group (hidden upload)-->
-                    <input type="file" id="file_input" hidden>
+                    <input type="file" id="file-input" onchange="checkUploaded()" hidden>
 
                     <!-- Save changes button-->
                     <input class="btn btn-primary" type="submit" value="Save changes">
