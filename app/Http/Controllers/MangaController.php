@@ -22,7 +22,7 @@ class MangaController extends Controller
         $attached = null;
         if (!is_null(session('user-info'))) {
             $user_id = session('user-info')->id;
-            $attached = $manga->users()->exists($user_id);
+            $attached = $manga->users()->where('user_id', $user_id)->exists();
         }
 
         return view('manga', compact('chapters','manga','genres', 'attached'));
