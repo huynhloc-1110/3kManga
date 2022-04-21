@@ -17,9 +17,10 @@ class ChapterController extends Controller
         $chapter = Chapter::find($id);
         $manga = Manga::find($chapter->manga_id);
 
-        //get next and previous chapter id
-        $next = Chapter::where('id', '>', $id)->min('id');
-        $previous = Chapter::where('id', '<', $id)->max('id');
+        //get next and previous chapter id of this manga
+        $thisMangaId = $manga->id;
+        $next = Chapter::where('manga_id', $thisMangaId)->where('id', '>', $id)->min('id');
+        $previous = Chapter::where('manga_id', $thisMangaId)->where('id', '<', $id)->max('id');
 
         return view('chapter', compact('images', 'chapter', 'manga', 'next', 'previous'));
     }

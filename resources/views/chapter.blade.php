@@ -23,7 +23,13 @@
     </div>
     <div class="col-lg-6 m-auto text-center">
         <br>
-        <a href="{{ url("manga-$manga->id") }}" class="btn btn-primary">Return to Manga Page</a>
+        @if (!is_null($previous))
+            <a href="{{ url("chapter-$previous") }}" class="btn btn-primary">Previous Chapter</a>
+        @endif
+        <a href="{{ url("manga-$manga->id") }}" class="btn btn-success">Return to Manga Page</a>
+        @if (!is_null($next))
+            <a href="{{ url("chapter-$next") }}" class="btn btn-primary">Next Chapter</a>
+        @endif
     </div>
 </div>
 @endsection
