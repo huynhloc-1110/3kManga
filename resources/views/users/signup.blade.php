@@ -21,22 +21,24 @@
                 <p>Konichiwa!! Welcome to 3KMANGA</p>
                 <br>
                 <p></p>
-                <form method="POST" class="register-form" id="register-form" action="{{route('signup-user')}}">
+                <form method="POST" class="register-form" id="register-form" action="{{ route('signup-user') }}">
                     @csrf
+                    <span style="color:red;" >@error('name'){{$message}}@enderror</span>
                     <div class="form-group">
                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input type="text" name="name" id="name" placeholder="User Name"/>
-                        <span  style="color:red;" >@error('name'){{$message}}@enderror</span>       
                     </div>
+
+                    <span style="color:red;" >@error('email'){{$message}}@enderror</span>
                     <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-email"></i></label>
                         <input type="email" name="email" id="email" placeholder="Your Email"/>
-                        <span  style="color:red;" >@error('email'){{$message}}@enderror</span>                       
                     </div>
+
+                    <span style="color:red;" >@error('password'){{$message}}@enderror</span>
                     <div class="form-group">
                         <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                         <input type="password" name="password" id="pass" placeholder="Password"/>
-                        <span  style="color:red;" >@error('password'){{$message}}@enderror</span>                    
                     </div>
 
                     <div class="form-group form-button">
@@ -44,9 +46,9 @@
                     </div>
                     @if (isset($success))
                         @if ($success)
-                            <span  style="color:green;" >You have successfully sign up!</span>
+                            <span style="color:green;" >You have successfully sign up!</span>
                         @else
-                            <span  style="color:red" >Something went wrong with the sign up process.</span>
+                            <span style="color:red" >Something went wrong with the sign up process.</span>
                         @endif
                     @endif
                 </form>

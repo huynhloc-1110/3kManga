@@ -26,15 +26,13 @@ Route::get('/manga-{id}', [MangaController::class, 'showChapters']);
 
 Route::get('/chapter-{id}', [ChapterController::class, 'showImages']);
 
+Route::get('/signup',[SignupController::class, 'signupView']);
+Route::post('/signup-user',[SignupController::class, 'signupUser'])->name('signup-user');
+
+//user
 Route::get('/login', function () {
     return view('login');
 });
-
-
-//user
-Route::get('/signup',[SignupController::class, 'signupView']);
-
-Route::post('/signup-user',[SignupController::class, 'signupUser'])->name('signup-user');
 
 Route::get('/profile', function () {
     return view('users.profile');
