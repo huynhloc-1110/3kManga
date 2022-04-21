@@ -23,7 +23,7 @@
                 <br>
 
                 <!-- Form -->
-                <form method="POST" class="register-form" id="register-form" action="{{ route('signup-user') }}">
+                <form method="POST" class="register-form" id="register-form" action="{{ url('signup-submit') }}">
                     @csrf
                     <!-- Username -->
                     <span style="color:red;" >@error('name'){{$message}}@enderror</span>

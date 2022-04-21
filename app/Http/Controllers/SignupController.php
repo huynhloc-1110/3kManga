@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Hash;/*PROTECT PASSWORD*/
 class SignupController extends Controller
 {
     public function signupView(){
-        return view('users.signup');
+        return view('signup');
     }
 
-    public function signupUser(Request $request){
+    public function signupSubmit(Request $request){
         //check validation, redirect to the current page if fails
         $request->validate([
             'name'=>'required',
@@ -32,7 +32,7 @@ class SignupController extends Controller
 
         //notify view if the database saving process is successful or not
         $success = $user->save();
-        return view('users.signup')->with('success', $success);
+        return view('signup')->with('success', $success);
     }
 
 }

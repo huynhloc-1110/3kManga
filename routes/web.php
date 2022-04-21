@@ -17,6 +17,7 @@ use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\MangaController;
 use \App\Http\Controllers\ChapterController;
 use \App\Http\Controllers\SignupController;
+use \App\Http\Controllers\LoginController;
 
 
 //both role
@@ -26,14 +27,13 @@ Route::get('/manga-{id}', [MangaController::class, 'showChapters']);
 
 Route::get('/chapter-{id}', [ChapterController::class, 'showImages']);
 
-Route::get('/signup',[SignupController::class, 'signupView']);
-Route::post('/signup-user',[SignupController::class, 'signupUser'])->name('signup-user');
+Route::get('/signup', [SignupController::class, 'signupView']);
+Route::post('/signup-submit', [SignupController::class, 'signupSubmit']);
+
+Route::get('/login', [LoginController::class, 'loginView']);
+Route::post('/login-submit', [LoginController::class, 'authenticate']);
 
 //user
-Route::get('/login', function () {
-    return view('login');
-});
-
 Route::get('/profile', function () {
     return view('users.profile');
 });
