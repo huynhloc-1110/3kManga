@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function loginView() {
+    public function loginView(Request $request) {
         return view('login');
     }
 
@@ -21,9 +21,9 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
-
+        
         return back()->withErrors([
             'email' => 'Incorrect login credentials.'
-        ])->onlyInput(['email']);
+        ])->onlyInput('email');
     }
 }

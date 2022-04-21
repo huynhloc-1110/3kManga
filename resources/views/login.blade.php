@@ -15,28 +15,34 @@
 <div class ="main">
     <div class="container">
         <div class="signin-content">
+            <!-- Signup image container -->
             <div class="signin-image">
                 <figure><img src="dist/img/login.jpg" alt="log in image"></figure>
                 <a href="{{ url('signup') }}" class="signup-image-link">Create an account</a>
             </div>
-
+            <!-- Signup image form -->
             <div class="signin-form">
                 <h2 class="form-title">Log in</h2>
                 <p>Dive in to the world of manga series!</p>
                 <br>
-                <p></p>
-                <form method="POST" class="register-form" id="login-form">
+                <form method="post" class="register-form" id="login-form" action="{{ url('login-submit') }}">
+                    @csrf
+                    <!-- Email -->
                     <div class="form-group">
                         <label for="your_email"><i class="zmdi zmdi-email"></i></label>
-                        <input type="email" name="email" id="email" placeholder="Your Email"/>
+                        <input type="email" name="email" id="email" placeholder="Your Email" value="{{old('password')}}"/>
                     </div>
+                    <!-- Password -->
                     <div class="form-group">
-                        <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                        <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                        <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" name="password" id="password" placeholder="Password"/>
                     </div>
+                    <!-- Error -->
+                    <span style="color:red;" >@error('email'){{$message}}@enderror</span>
+                    <!-- Submit button -->
                     <div class="form-group form-button">
-                        <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-                        <input type="submit" name="signin" id="signin" class="form-submit2" value="Log in as admin"/>
+                        <input type="submit" name="user" id="login" class="form-submit" value="Log in"/>
+                        <input type="submit" name="admin" id="login" class="form-submit2" value="Log in as admin"/>
                     </div>
                 </form>
             </div>
