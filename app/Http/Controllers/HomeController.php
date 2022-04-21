@@ -8,7 +8,12 @@ use App\Models\Manga;
 class HomeController extends Controller
 {
     public function showMangas(Request $request) {
+        //get search input from request
         $search = $request->input('search');
+
+        //check if user search for anything
+        //if yes, filter the manga list
+        //if no, get all the manga in the database
         if (isset($search)) {
             $mangas = Manga::where('name', 'like', '%'.$search.'%')->get();
         }
