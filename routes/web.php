@@ -37,6 +37,7 @@ Route::post('/login-submit', [LoginController::class, 'authenticate']);
 //user
 Route::middleware(['auth'])->group(function(){
     Route::get('/profile', [UserController::class, 'showUserInfo']);
+    Route::post('/change-profile', [UserController::class, 'changeProfile']);
     Route::get('/logout', [UserController::class, 'logOut']);
 
     Route::get('/follow-{id}', [MangaController::class, 'follow']);

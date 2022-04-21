@@ -27,7 +27,7 @@
             <div class="card-header">Profile Picture</div>
             <div class="card-body text-center">
                 <!-- Profile picture image-->
-                <img class="img-account-profile rounded-circle mb-2" src="{{ $user->avatar_url }}" alt="">
+                <img class="img-account-profile rounded-circle mb-2" src="{{ $user->avatar_url }}" alt="{{ $user->name }}'s avatar" width="215">
                 <!-- Profile picture help block-->
                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                 <!-- Profile picture upload button-->
@@ -42,19 +42,20 @@
         <div class="card mb-4">
             <div class="card-header">Account Details</div>
             <div class="card-body">
-                <form>
+                <form method="post" action="{{ url('/change-profile') }}" enctype="multipart/form-data">
+                    @csrf
                     <!-- Form Group (username)-->
                     <div class="mb-3">
-                        <label class="small mb-1" for="inputUsername">Username</label>
-                        <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="{{ $user->name }}" readonly style="background-color: white">
+                        <label class="small mb-1" for="name">Username</label>
+                        <input class="form-control" id="name" name="name" type="text" placeholder="{{ $user->name }}" value="{{ $user->name }}">
                     </div>
                     <!-- Form Group (email address)-->
                     <div class="mb-3">
-                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                        <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="{{ $user->email }}" readonly style="background-color: white">
+                        <label class="small mb-1" for="email">Email address</label>
+                        <input class="form-control" id="email" name="email" type="email" placeholder="{{ $user->email }}" value="{{ $user->email }}">
                     </div>
                     <!-- Form Group (hidden upload)-->
-                    <input type="file" id="file-input" onchange="checkUploaded()" hidden>
+                    <input type="file" id="file-input" name="avatar" onchange="checkUploaded()" hidden>
 
                     <!-- Save changes button-->
                     <input class="btn btn-primary" type="submit" value="Save changes">
