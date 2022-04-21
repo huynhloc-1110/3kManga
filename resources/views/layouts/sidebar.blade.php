@@ -11,10 +11,22 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="
+            @if (!is_null(session('user-info')))
+              {{ session('user-info')->avatar_url }}
+            @else
+              dist/img/guest.png
+            @endif
+          " class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{ url('profile') }}" class="d-block">Alexander Pierce</a>
+          <a href="{{ url('profile') }}" class="d-block">
+            @if (!is_null(session('user-info')))
+              {{ session('user-info')->name }}
+            @else
+              Guest
+            @endif
+          </a>
         </div>
       </div>
 

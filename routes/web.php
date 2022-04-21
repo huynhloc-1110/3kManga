@@ -34,14 +34,16 @@ Route::get('/login', [LoginController::class, 'loginView']);
 Route::post('/login-submit', [LoginController::class, 'authenticate']);
 
 //user
-Route::get('/profile', function () {
-    return view('users.profile');
-});
-Route::get('/update', function () {
-    return view('users.update');
-});
-Route::get('/library', function () {
-    return view('users.library');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/profile', function () {
+        return view('users.profile');
+    });
+    Route::get('/update', function () {
+        return view('users.update');
+    });
+    Route::get('/library', function () {
+        return view('users.library');
+    });
 });
 
 //admin
@@ -61,4 +63,4 @@ Route::get('/admin-profile', function () {
 //other
 Route::get('/unauthorize', function () {
     return view('errors.unauthorize');
-});
+})->name('unauthorize');

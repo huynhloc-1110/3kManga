@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function loginView(Request $request) {
+    public function loginView() {
         return view('login');
     }
 
@@ -19,6 +19,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials, true)) {
             $request->session()->regenerate();
+            session(['user-info' => Auth::user()]);
             return redirect()->intended('/');
         }
         
