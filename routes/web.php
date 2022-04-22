@@ -20,7 +20,7 @@ use \App\Http\Controllers\SignupController;
 use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\LibraryController;
-
+use App\Http\Controllers\UpdateController;
 
 //both role
 Route::get('/', [HomeController::class, 'showMangas']);
@@ -45,10 +45,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/unfollow-{id}', [MangaController::class, 'unfollow']);
 
     Route::get('/library', [LibraryController::class, 'showMangas']);
-
-    Route::get('/update', function () {
-        return view('users.update');
-    });
+    Route::get('/update', [UpdateController::class, 'showUpdates']);
 });
 
 //admin
