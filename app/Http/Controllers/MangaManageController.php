@@ -55,4 +55,41 @@ class MangaManageController extends Controller
         return redirect('/admin-manga');
     }
 
+    public function showUpdateView($id) {
+        $manga = Manga::findOrFail($id);
+        return view('admins.account-update', compact('user'));
+    }
+
+    public function updateManga(Request $request, $id) {
+        $manga = Manga::findOrFail($id);
+        $manga->name = $request->input('name');
+        $manga->author = $request->input('author');
+        $manga->description = $request->input('description');
+        $manga->cover_url = "dist/img/one_piece.jpg";
+        $manga->save();
+
+        //get cover from request, store it in the storage, store the path to the database
+        //and save
+        if ($request->hasFile('cover')) {
+            $request->cover->storeAs('public/mangas', 'manga-'.$manga->id.'.png');
+            $path = 'storage/mangas/'.'manga-'.$manga->id.'.png';
+            $manga->cover_url = $path;
+        }
+        $manga->save();
+
+        //attach genres to the current manga
+        if ($request->input('genre-1') != 'Select category') {
+            $manga->genres()->attach($request->input('genre-1'));
+        }
+        if ($request->input('genre-2') != 'Select category') {
+            $manga->genres()->attach($request->input('genre-2'));
+        }
+        if ($request->input('genre-3') != 'Select category') {
+            $manga->genres()->attach($request->input('genre-3'));
+        }
+        
+        return redirect('/admin-manga');
+
+    }
+
 }
