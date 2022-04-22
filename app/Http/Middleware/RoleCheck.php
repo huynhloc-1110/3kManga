@@ -17,7 +17,7 @@ class RoleCheck
     public function handle(Request $request, Closure $next, $role)
     {
         if (session('user-info')->role !== "admin") {
-            return redirect('unauthorize');
+            return redirect('admin-required');
         }
 
         return $next($request);
