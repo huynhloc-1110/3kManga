@@ -18,7 +18,7 @@
                 <!-- Profile picture image-->
                 <img class="img-account-profile rounded-circle mb-2" src="dist/img/avatar.png" alt="">
                 <!-- Profile picture help block-->
-                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                <div class="small font-italic text-muted mb-4">Image no larger than 5 MB</div>
                 <!-- Profile picture upload button-->
                 <button class="btn btn-primary" type="button" onclick="document.getElementById('file_input').click()">Upload new image</button>
             </div>

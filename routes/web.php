@@ -19,6 +19,7 @@ use \App\Http\Controllers\ChapterController;
 use \App\Http\Controllers\SignupController;
 use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\LibraryController;
 
 
 //both role
@@ -43,11 +44,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/follow-{id}', [MangaController::class, 'follow']);
     Route::get('/unfollow-{id}', [MangaController::class, 'unfollow']);
 
+    Route::get('/library', [LibraryController::class, 'showMangas']);
+
     Route::get('/update', function () {
         return view('users.update');
-    });
-    Route::get('/library', function () {
-        return view('users.library');
     });
 });
 
