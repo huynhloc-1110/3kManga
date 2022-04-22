@@ -22,6 +22,7 @@ use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\LibraryController;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\AccountManageController;
+use App\Http\Controllers\MangaManageController;
 
 //both role
 Route::get('/', [HomeController::class, 'showMangas']);
@@ -63,9 +64,12 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/account-delete-{id}', [AccountManageController::class, 'deleteAccount']);
 
         //manga
-        Route::get('/admin-manga', function () {
-            return view('admins.manga-manage');
-        });
+        Route::get('/admin-manga', [MangaManageController::class, 'showMangas']);
+
+        Route::get('/manga-create', [MangaManageController::class, 'showCreateView']);
+        Route::post('/manga-create', [MangaManageController::class, 'createManga']);
+        
+     
 
         //chapter
         Route::get('/admin-chapter', function () {
