@@ -21,6 +21,7 @@ use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\LibraryController;
 use App\Http\Controllers\UpdateController;
+use App\Http\Middleware\RoleCheck;
 
 //both role
 Route::get('/', [HomeController::class, 'showMangas']);
@@ -35,8 +36,9 @@ Route::post('/signup-submit', [SignupController::class, 'signupSubmit']);
 Route::get('/login', [LoginController::class, 'loginView']);
 Route::post('/login-submit', [LoginController::class, 'authenticate']);
 
-//user
+//roles
 Route::middleware(['auth'])->group(function(){
+    //user
     Route::get('/profile', [UserController::class, 'showUserInfo']);
     Route::post('/change-profile', [UserController::class, 'changeProfile']);
     Route::get('/logout', [UserController::class, 'logOut']);
@@ -46,20 +48,22 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/library', [LibraryController::class, 'showMangas']);
     Route::get('/update', [UpdateController::class, 'showUpdates']);
-});
 
-//admin
-Route::get('/admin-account', function () {
-    return view('admins.account-manage');
-});
-Route::get('/admin-manga', function () {
-    return view('admins.manga-manage');
-});
-Route::get('/admin-chapter', function () {
-    return view('admins.chapter-manage');
-});
-Route::get('/admin-profile', function () {
-    return view('admins.profile');
+    //admin
+    Route::middleware('role:admin')->group(function() {
+        Route::get('/admin-account', function () {
+            return view('admins.account-manage');
+        });
+        Route::get('/admin-manga', function () {
+            return view('admins.manga-manage');
+        });
+        Route::get('/admin-chapter', function () {
+            return view('admins.chapter-manage');
+        });
+        Route::get('/admin-profile', function () {
+            return view('admins.profile');
+        });
+    });
 });
 
 //other
