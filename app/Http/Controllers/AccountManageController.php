@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;/*PROTECT PASSWORD*/
 class AccountManageController extends Controller
 {
     public function showAccounts() {
-        $users = User::all();
+        $users = User::where('role', 'user')->get();
         return view('admins.account-manage', compact('users'));
     }
 
