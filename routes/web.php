@@ -70,3 +70,6 @@ Route::middleware(['auth'])->group(function(){
 Route::get('/unauthorize', function () {
     return view('errors.unauthorize');
 })->name('unauthorize');
+Route::get('/admin-required', function () {
+    return view('errors.admin-required');
+})->name('admin-required');
