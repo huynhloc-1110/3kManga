@@ -17,7 +17,7 @@
         </div>
 
         <!-- Create new manga button -->
-        <a href="{{ url('manga-create') }}" class="btn btn-primary">Create a new manga</a>
+        <a href="{{ url('admanga-create') }}" class="btn btn-primary">Create a new manga</a>
         <br><br>
         
         @if (isset($mangas))      
