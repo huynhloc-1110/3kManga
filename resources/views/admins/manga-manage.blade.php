@@ -37,7 +37,7 @@
                 <td>{{ $manga->name }}</td>
                 <td><img src="{{ $manga->cover_url }}" alt="{{ $manga->name }}'s cover" width="50px"></td>
                 <td>
-                <a href="{{ url("manga-update-$user->id") }}" title='Update Record' data-toggle='tooltip'><i class='fa fa-edit'></i></a>
+                <a href="{{ url("admanga-update-$manga->id") }}" title='Update Record' data-toggle='tooltip'><i class='fa fa-edit'></i></a>
                 <a href="" title='Delete Record' data-toggle='tooltip'><i class='fa fa-trash'></i></a>
                 </td>
                 </tr>

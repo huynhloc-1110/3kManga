@@ -15,50 +15,30 @@
           <h2>Manga Management</h2>
         </div>
         <p>Please fill this form and submit to add a new manga in the database.</p>
-        <form action="{{ url('admanga-create') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url("admanga-update-$manga->id") }}" method="post" enctype="multipart/form-data">
             @csrf
             <!-- Name -->
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" name="name" class="form-control" value="">
+                <input type="text" name="name" class="form-control" value="{{ $manga->name }}">
             </div>
             <!-- Author -->
             <div class="form-group">
                 <label>Author</label>
-                <input type="text" name="author" class="form-control" value="">
+                <input type="text" name="author" class="form-control" value="{{ $manga->author }}">
             </div>
             <!-- Description -->
             <div class="form-group">
                 <label >Description</label>
-                <textarea class="form-control" name="description" rows="6"></textarea>
+                <textarea class="form-control" name="description" rows="6" value="{{ $manga->description }}"></textarea>
             </div>
-            <!-- Genres -->
-            <div class="form-group">
-                <label>Genres</label>
-                <select name="genre-1" class="custom-select tm-select-accounts" id="category">
-                    <option selected>Select category</option>
-                    @foreach ($genres as $genre)
-                    <option value="{{ $genre->id }}">{{ $genre->name }}</option>
-                    @endforeach
-                </select>
-                <select name="genre-2" class="custom-select tm-select-accounts" id="category2">
-                    <option selected>Select category</option>
-                    @foreach ($genres as $genre)
-                    <option value="{{ $genre->id }}">{{ $genre->name }}</option>
-                    @endforeach
-                </select>
-                <select name="genre-3" class="custom-select tm-select-accounts" id="category3">
-                    <option selected>Select category</option>
-                    @foreach ($genres as $genre)
-                    <option value="{{ $genre->id }}">{{ $genre->name }}</option>
-                    @endforeach
-                </select>
-            </div>
+
             <!-- Cover -->
             <div class="form-group">
                 <label>Cover</label>
                 <br>
-                <input type="file" name="cover">
+                <input type="file" name="cover" >
+                <img src="{{ asset('storage/mangas/'.$manga->cover_url) }}" alt="{{ $manga->name }}'s cover">
             </div>
 
             <!-- Submit and Back buttons -->

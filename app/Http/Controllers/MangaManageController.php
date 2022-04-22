@@ -54,10 +54,11 @@ class MangaManageController extends Controller
         
         return redirect('/admin-manga');
     }
+    //update manga controller
 
     public function showUpdateView($id) {
         $manga = Manga::findOrFail($id);
-        return view('admins.account-update', compact('user'));
+        return view('admins.manga-update', compact('manga'));
     }
 
     public function updateManga(Request $request, $id) {
@@ -77,16 +78,6 @@ class MangaManageController extends Controller
         }
         $manga->save();
 
-        //attach genres to the current manga
-        if ($request->input('genre-1') != 'Select category') {
-            $manga->genres()->attach($request->input('genre-1'));
-        }
-        if ($request->input('genre-2') != 'Select category') {
-            $manga->genres()->attach($request->input('genre-2'));
-        }
-        if ($request->input('genre-3') != 'Select category') {
-            $manga->genres()->attach($request->input('genre-3'));
-        }
         
         return redirect('/admin-manga');
 

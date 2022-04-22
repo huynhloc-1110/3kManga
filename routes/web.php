@@ -68,6 +68,9 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('/admanga-create', [MangaManageController::class, 'showCreateView']);
         Route::post('/admanga-create', [MangaManageController::class, 'createManga']);
+
+        Route::get('/admanga-update-{id}', [MangaManageController::class, 'showUpdateView']);
+        Route::post('/admanga-update-{id}', [MangaManageController::class, 'updateManga']);
         
      
 
