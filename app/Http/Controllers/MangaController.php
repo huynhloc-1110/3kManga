@@ -19,6 +19,7 @@ class MangaController extends Controller
         $genres = Manga::find($id)->genres()->get();
         $chapters = Chapter::where('manga_id', $id)->get();
 
+        //check if the manga is followed by the current (if-exist) user
         $attached = null;
         if (!is_null(session('user-info'))) {
             $user_id = session('user-info')->id;
@@ -29,12 +30,16 @@ class MangaController extends Controller
     }
     
     public function follow($id) {
+        //get the user from session
+        //and attach the current manga to it through n-to-n relationship
         $user = session('user-info');
         $user->mangas()->attach($id);
         return back();
     }
 
     public function unfollow($id) {
+        //get the user from session
+        //and detach the current manga from it through n-to-n relationship
         $user = session('user-info');
         $user->mangas()->detach($id);
         return back();
