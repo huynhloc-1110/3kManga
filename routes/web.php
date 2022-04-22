@@ -21,7 +21,7 @@ use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\LibraryController;
 use App\Http\Controllers\UpdateController;
-use App\Http\Middleware\RoleCheck;
+use App\Http\Controllers\AccountManageController;
 
 //both role
 Route::get('/', [HomeController::class, 'showMangas']);
@@ -51,15 +51,27 @@ Route::middleware(['auth'])->group(function(){
 
     //admin
     Route::middleware('role:admin')->group(function() {
-        Route::get('/admin-account', function () {
-            return view('admins.account-manage');
-        });
+        //account
+        Route::get('/admin-account', [AccountManageController::class, 'showAccounts']);
+
+        Route::get('/account-create', [AccountManageController::class, 'showCreateView']);
+        Route::post('/account-create', [AccountManageController::class, 'createAccount']);
+
+        Route::get('/account-update-{id}', [AccountManageController::class, 'showUpdateView']);
+        Route::post('/account-update-{id}', [AccountManageController::class, 'updateAccount']);
+
+        Route::get('/account-delete-{id}', [AccountManageController::class, 'deleteAccount']);
+
+        //manga
         Route::get('/admin-manga', function () {
             return view('admins.manga-manage');
         });
+
+        //chapter
         Route::get('/admin-chapter', function () {
             return view('admins.chapter-manage');
         });
+
         Route::get('/admin-profile', function () {
             return view('admins.profile');
         });

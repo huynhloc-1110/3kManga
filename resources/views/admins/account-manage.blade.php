@@ -10,69 +10,39 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <div class="page-header">
-            <h2>User Account Management</h2>
-        </div>
-        <p>Please fill this form and submit to CRUD account record in the database.</p>
-        <form action="" method="post" >
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" value="">
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" value="">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" value="">
-            </div>
-            <input type="submit" name="savebtn" class="btn btn-primary" value="Save">
-            <a href="{{ url('admin-profile') }}" class="btn btn-default">Back</a>
-        </form>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
         <div class="page-header clearfix">
-            <br><br>
+            <br>
             <h2 class="pull-left">User Account Details</h2>
+            <br>
         </div>
 
-        @php
-            $row = [
-                'id' => '1',
-                'username' => 'loc',
-                'email' => 'loc@gmail.com',
-                'password' => '123',
-            ];
-        @endphp
+        <!-- Create new account button -->
+        <a href="{{ url('account-create') }}" class="btn btn-primary">Create a new account</a>
+        <br><br>
 
-        @if (true)
+        <!-- Account list show -->
+        @if (isset($users))
        <table class='table table-bordered table-striped'>
             <thead>
                 <tr>
                     <th>Id</th>                                      
                     <th>Username</th>
                     <th>Email</th>
-                    <th>Password</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-            @for ($i = 0; $i < 3; $i++) 
+            @foreach ($users as $user)
                 <tr>
-                <td>{{ $row['id'] }}</td>                                        
-                <td>{{ $row['username'] }}</td>
-                <td>{{ $row['email'] }}</td>
-                <td>{{ $row['password'] }}</td>
+                <td>{{ $user->id }}</td>                                        
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email}}</td>
                 <td>
-                <a href='index.php?act=update&id="{{ $row['id'] }}"' title='Update Record' data-toggle='tooltip'><i class='fa fa-edit'></i></a>
-                <a href='index.php?act=delete&id="{{ $row['id'] }}"' title='Delete Record' data-toggle='tooltip'><i class='fa fa-trash'></i></a>
+                <a href="{{ url("account-update-$user->id") }}" title='Update Record' data-toggle='tooltip'><i class='fa fa-edit'></i></a>
+                <a href="{{ url("account-delete-$user->id") }}" title='Delete Record' data-toggle='tooltip'><i class='fa fa-trash'></i></a>
                 </td>
                 </tr>
-            @endfor
+            @endforeach
             </tbody>                            
         </table>
         @else
