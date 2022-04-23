@@ -84,7 +84,7 @@ Route::middleware(['auth'])->group(function(){
         // Route::get('/adchapter-update-{id}', [ChapterManageController::class, 'showUpdateView']);
         // Route::post('/adchapter-update-{id}', [ChapterManageController::class, 'updateChapter']);
         
-        // Route::get('/adchapter-delete-{id}', [ChapterManageController::class, 'deleteChapter']);
+        Route::get('/adchapter-delete-{id}', [ChapterManageController::class, 'deleteChapter']);
 
         //profile
         Route::get('/admin-profile', function () {

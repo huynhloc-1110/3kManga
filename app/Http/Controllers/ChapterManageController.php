@@ -52,4 +52,11 @@ class ChapterManageController extends Controller
         
         return redirect("admin-chapter-$mangaId");
     }
+
+    public function deleteChapter($id) {
+        $chapter = Chapter::findOrFail($id);
+        $chapter->delete();
+
+        return redirect()->back();
+    }
 }
