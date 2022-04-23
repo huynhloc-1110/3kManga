@@ -18,20 +18,26 @@
         <form action="{{ url('admanga-create') }}" method="post" enctype="multipart/form-data">
             @csrf
             <!-- Name -->
+            <span style="color:red;" >@error('name'){{$message}}@enderror</span>
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" name="name" class="form-control" value="">
             </div>
+
             <!-- Author -->
+            <span style="color:red;" >@error('author'){{$message}}@enderror</span>
             <div class="form-group">
                 <label>Author</label>
                 <input type="text" name="author" class="form-control" value="">
             </div>
+
             <!-- Description -->
+            <span style="color:red;" >@error('description'){{$message}}@enderror</span>
             <div class="form-group">
                 <label >Description</label>
                 <textarea class="form-control" name="description" rows="6"></textarea>
             </div>
+
             <!-- Genres -->
             <div class="form-group">
                 <label>Genres</label>
@@ -54,6 +60,7 @@
                     @endforeach
                 </select>
             </div>
+            
             <!-- Cover -->
             <div class="form-group">
                 <label>Cover</label>

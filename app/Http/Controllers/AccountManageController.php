@@ -43,6 +43,14 @@ class AccountManageController extends Controller
     }
 
     public function updateAccount(Request $request, $id) {
+        //check validation, redirect to the current page if fails
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:5|max:14',
+        ]);
+
+        //if pass validation test, using ORM to update the user in the database
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
