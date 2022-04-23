@@ -54,6 +54,7 @@ class MangaManageController extends Controller
         
         return redirect('/admin-manga');
     }
+    
     //update manga controller
 
     public function showUpdateView($id) {
