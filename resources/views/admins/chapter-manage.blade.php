@@ -42,7 +42,6 @@
                 <td>{{ $chapter->name }}</td>
                 <td>{{ $chapter->updated_at }}</td>
                 <td>
-                <a href="" title='Update Record' data-toggle='tooltip'><i class='fa fa-edit'></i></a>
                 <a href="{{ url("adchapter-delete-$chapter->id") }}" title='Delete Record' data-toggle='tooltip'><i class='fa fa-trash'></i></a>
                 </td>
                 </tr>

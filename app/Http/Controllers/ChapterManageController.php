@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage; //for delete files in storage
 use App\Models\Manga;
 use App\Models\Chapter;
 use App\Models\Image;
@@ -54,7 +55,20 @@ class ChapterManageController extends Controller
     }
 
     public function deleteChapter($id) {
+        //find chapter by id
         $chapter = Chapter::findOrFail($id);
+
+        //delete chapter images in storage
+        $images = $chapter->images;
+        foreach ($images as $image) {
+            $parts = explode("/", $image->url);
+            $imageName = $parts[2];
+            $imagePath = "public/images/$imageName";
+            if (Storage::exists($imagePath))
+                Storage::delete($imagePath);
+        }
+
+        //delete chapter from database
         $chapter->delete();
 
         return redirect()->back();
