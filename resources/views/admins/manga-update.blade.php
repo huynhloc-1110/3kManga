@@ -14,7 +14,7 @@
         <div class="page-header">
           <h2>Manga Management</h2>
         </div>
-        <p>Please fill this form and submit to add a new manga in the database.</p>
+        <p>Please fill this form and submit to update a manga in the database.</p>
         <form action="{{ url("admanga-update-$manga->id") }}" method="post" enctype="multipart/form-data">
             @csrf
             <!-- Name -->
