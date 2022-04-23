@@ -103,4 +103,10 @@ class MangaManageController extends Controller
         return redirect('/admin-manga');
     }
 
+    public function deleteManga($id) {
+        $manga = Manga::findOrFail($id);
+        $manga->delete();
+
+        return redirect('/admin-manga');
+    }
 }

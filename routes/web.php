@@ -72,7 +72,7 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/admanga-update-{id}', [MangaManageController::class, 'showUpdateView']);
         Route::post('/admanga-update-{id}', [MangaManageController::class, 'updateManga']);
         
-     
+        Route::get('/admanga-delete-{id}', [MangaManageController::class, 'deleteManga']);
 
         //chapter
         Route::get('/admin-chapter', function () {
