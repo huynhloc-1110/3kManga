@@ -10,51 +10,22 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <div class="page-header">
-            <h2>Chapter Management</h2>
-        </div>
-        <p>Please fill this form and submit to CRUD chapter the database.</p>
-        <form action="" method="post" >
-            <div class="form-group">
-                <label>Manga Name</label>
-                <select class="custom-select tm-select-accounts">
-                  <option selected>Select Manga Name</option>
-                  <option value="1">A</option>
-                  <option value="2">B</option>
-                  <option value="3">A</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Chapter Name</label>
-                <input type="email" name="chaptername" class="form-control" value="">
-            </div>
-            <div class="form-group">
-                <label>Images</label>
-                <br>
-                <input type="file" name="images" multiple value="">
-            </div>
-            <input type="submit" name="savebtn" class="btn btn-primary" value="Save">
-            <a href="{{ url('admin-profile') }}" class="btn btn-default">Back</a>
-        </form>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
         <div class="page-header clearfix">
-            <br><br>
+            <br>
             <h2 class="pull-left">Chapter Details</h2>
+            <br>
         </div>
 
-        @php
-            $row = [
-                'id' => '1',
-                'chapter-name' => 'loc',
-                'updated-at' => 'loc@gmail.com',
-            ];
-        @endphp
+        <!-- Create new chapter button -->
+        <a href="{{ url("adchapter-create-$manga->id") }}" class="btn btn-primary">Create a new chapter</a>
+        <br><br>
+        
+        <div class="form-group">
+            <label>Manga Name</label>
+            <input class="form-control" type="text" readonly value="{{ $manga->id }} - {{ $manga->name }}">
+        </div>
 
-        @if (true)
+        @if (isset($chapters))
        <table class='table table-bordered table-striped'>
             <thead>
                 <tr>
@@ -65,17 +36,17 @@
                 </tr>
             </thead>
             <tbody>
-            @for ($i = 0; $i < 3; $i++) 
+            @foreach ($chapters as $chapter)
                 <tr>
-                <td>{{ $row['id'] }}</td>                                        
-                <td>{{ $row['chapter-name'] }}</td>
-                <td>{{ $row['updated-at'] }}</td>
+                <td>{{ $chapter->id }}</td>                                        
+                <td>{{ $chapter->name }}</td>
+                <td>{{ $chapter->updated_at }}</td>
                 <td>
-                <a href='index.php?act=update&id="{{ $row['id'] }}"' title='Update Record' data-toggle='tooltip'><i class='fa fa-edit'></i></a>
-                <a href='index.php?act=delete&id="{{ $row['id'] }}"' title='Delete Record' data-toggle='tooltip'><i class='fa fa-trash'></i></a>
+                <a href="" title='Update Record' data-toggle='tooltip'><i class='fa fa-edit'></i></a>
+                <a href="" title='Delete Record' data-toggle='tooltip'><i class='fa fa-trash'></i></a>
                 </td>
                 </tr>
-            @endfor
+            @endforeach
             </tbody>                            
         </table>
         @else

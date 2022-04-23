@@ -12,8 +12,9 @@
 <div class="row">
     <div class="col-md-12">
         <div class="page-header clearfix">
-            <br><br>
+            <br>
             <h2 class="pull-left">Manga Details</h2>
+            <br>
         </div>
 
         <!-- Create new manga button -->
@@ -39,6 +40,8 @@
                 <td>
                 <a href="{{ url("admanga-update-$manga->id") }}" title='Update Record' data-toggle='tooltip'><i class='fa fa-edit'></i></a>
                 <a href="{{ url("admanga-delete-$manga->id") }}" title='Delete Record' data-toggle='tooltip'><i class='fa fa-trash'></i></a>
+                <br><br>
+                <a href="{{ url("admin-chapter-$manga->id") }}" class="btn btn-success">Edit chapters</a>
                 </td>
                 </tr>
             @endforeach

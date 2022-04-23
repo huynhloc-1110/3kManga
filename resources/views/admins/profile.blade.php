@@ -28,7 +28,6 @@
             <div class="card-body">
                 <a class="btn btn-primary" href="{{ url('admin-account') }}">Account Manage</a>
                 <a class="btn btn-primary" href="{{ url('admin-manga') }}">Manga Manage</a>
-                <a class="btn btn-primary" href="{{ url('admin-chapter') }}">Chapter Manage</a>
             </div>
         </div>
     </div>

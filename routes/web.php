@@ -23,6 +23,7 @@ use \App\Http\Controllers\LibraryController;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\AccountManageController;
 use App\Http\Controllers\MangaManageController;
+use App\Http\Controllers\ChapterManageController;
 
 //both role
 Route::get('/', [HomeController::class, 'showMangas']);
@@ -75,10 +76,17 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/admanga-delete-{id}', [MangaManageController::class, 'deleteManga']);
 
         //chapter
-        Route::get('/admin-chapter', function () {
-            return view('admins.chapter-manage');
-        });
+        Route::get('/admin-chapter-{mangaId}', [ChapterManageController::class, 'showChapters']);
 
+        Route::get('/adchapter-create-{mangaId}', [ChapterManageController::class, 'showCreateView']);
+        Route::post('/adchapter-create-{mangaId}', [ChapterManageController::class, 'createChapter']);
+
+        // Route::get('/adchapter-update-{id}', [ChapterManageController::class, 'showUpdateView']);
+        // Route::post('/adchapter-update-{id}', [ChapterManageController::class, 'updateChapter']);
+        
+        // Route::get('/adchapter-delete-{id}', [ChapterManageController::class, 'deleteChapter']);
+
+        //profile
         Route::get('/admin-profile', function () {
             return view('admins.profile');
         });
