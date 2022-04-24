@@ -54,6 +54,56 @@ class ChapterManageController extends Controller
         return redirect("admin-chapter-$mangaId");
     }
 
+    public function showUpdateView($id) {
+        $chapter = Chapter::findOrFail($id);
+        $manga = Manga::findOrFail($chapter->manga_id);
+
+        return view('admins.chapter-update', compact('chapter', 'manga'));
+    }
+
+    public function updateChapter(Request $request, $id) {
+        //find chapter by id
+        $chapter = Chapter::findOrFail($id);
+
+        //check validation, redirect to the current page if fails
+        $request->validate([
+            'name'=>'required|min:1|max:50'
+        ]);
+
+        //if pass validation test, using ORM to update chapter in the database
+        $chapter->name = $request->input('name');
+        $chapter->save();
+        
+        //if the request has uploaded image, delete old ones and add new ones
+        if ($request->hasFile('images')) {
+            //delete old chapter images
+            $oldImages = $chapter->images;
+            foreach ($oldImages as $image) {
+                $parts = explode("/", $image->url);
+                $imageName = $parts[2];
+                $imagePath = "public/images/$imageName";
+                if (Storage::exists($imagePath))
+                    Storage::delete($imagePath);
+                $image->delete();
+            }
+
+            //add new images
+            $images = $request->file('images');
+            $count = 1;
+            foreach ($images as $image) {
+                $image->storeAs('public/images', 'image-'.$chapter->id.'-'.$count.'.png');
+                $path = 'storage/images/'.'image-'.$chapter->id.'-'.$count.'.png';
+                $currentImage = new Image();
+                $currentImage->url = $path;
+                $currentImage->chapter_id = $chapter->id;
+                $count++;
+                $currentImage->save();
+            }
+        }
+
+        return redirect("admin-chapter-$chapter->manga_id");
+    }
+
     public function deleteChapter($id) {
         //find chapter by id
         $chapter = Chapter::findOrFail($id);

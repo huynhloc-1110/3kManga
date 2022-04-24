@@ -80,6 +80,9 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('/adchapter-create-{mangaId}', [ChapterManageController::class, 'showCreateView']);
         Route::post('/adchapter-create-{mangaId}', [ChapterManageController::class, 'createChapter']);
+
+        Route::get('/adchapter-update-{id}', [ChapterManageController::class, 'showUpdateView']);
+        Route::post('/adchapter-update-{id}', [ChapterManageController::class, 'updateChapter']);
         
         Route::get('/adchapter-delete-{id}', [ChapterManageController::class, 'deleteChapter']);
 
