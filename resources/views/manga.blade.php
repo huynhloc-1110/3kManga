@@ -89,6 +89,11 @@
                     <p class='lead'><em>No chapters were found.</em></p>
                 @endif
             </div>
+
+            <!-- Pagination Nav -->
+            <div class="row justify-content-center">
+                {{ $chapters->links('pagination::bootstrap-4') }}
+            </div>
         </div>
     </div>
 </div>

@@ -49,5 +49,10 @@
             <p class='lead'><em>No records were found.</em></p>
         @endif
     </div>
-</div> 
+</div>
+
+<!-- Pagination Nav -->
+<div class="row justify-content-center">
+    {{ $users->links('pagination::bootstrap-4') }}
+</div>
 @endsection

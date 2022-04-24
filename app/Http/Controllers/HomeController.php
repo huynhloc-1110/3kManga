@@ -15,10 +15,11 @@ class HomeController extends Controller
         //if yes, filter the manga list
         //if no, get all the manga in the database
         if (isset($search)) {
-            $mangas = Manga::where('name', 'like', '%'.$search.'%')->get();
+            $mangas = Manga::where('name', 'like', '%'.$search.'%')->paginate(2);
+            $mangas->appends(['search' => $search]);
         }
         else {
-            $mangas = Manga::all();
+            $mangas = Manga::paginate(8);
         }
         return view('home', compact('mangas'));
     }

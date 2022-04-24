@@ -12,7 +12,7 @@ class ChapterManageController extends Controller
 {
     public function showChapters($mangaId) {
         $manga = Manga::findOrFail($mangaId);
-        $chapters = Chapter::where('manga_id', $mangaId)->get();
+        $chapters = Chapter::where('manga_id', $mangaId)->paginate(8);
 
         return view("admins.chapter-manage", compact('manga', 'chapters'));
     }

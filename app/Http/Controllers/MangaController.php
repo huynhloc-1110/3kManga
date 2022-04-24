@@ -17,7 +17,7 @@ class MangaController extends Controller
         if (is_null($manga)) return abort(404);
 
         $genres = Manga::find($id)->genres()->get();
-        $chapters = Chapter::where('manga_id', $id)->get();
+        $chapters = Chapter::where('manga_id', $id)->paginate(8);
 
         //check if the manga is followed by the current (if-exist) user
         $attached = null;

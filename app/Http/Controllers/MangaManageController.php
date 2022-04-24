@@ -10,7 +10,7 @@ use App\Models\Genre;
 class MangaManageController extends Controller
 {
     public function showMangas(){
-        $mangas = Manga::all();
+        $mangas = Manga::paginate(8);
         return view('admins.manga-manage', compact('mangas'));
     }
 
